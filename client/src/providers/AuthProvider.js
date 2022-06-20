@@ -24,7 +24,7 @@ const AuthProvider = ({ children }) => {
         }
     }
 
-    const SignUp = async (user) => {
+    const Signup = async (user) => {
         try {
             let res = await axios.post('/api/auth', user)
             console.log(res)
@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
     }
 
     return (
-        <AuthContext.Provider value={{ user, SignUp, login, logout }}>
+        <AuthContext.Provider value={{ user, Signup, login, logout }}>
             {children}
         </AuthContext.Provider>
     )

@@ -3,10 +3,10 @@ import { AuthContext } from "../../providers/AuthProvider"
 
 
 const SignUp = () => {
-    const { signup } = useContext(AuthContext)
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [passwordConfirm, setPasswordconfirm] = useState("")
+    const { Signup } = useContext(AuthContext)
+    const [email, setEmail] = useState("test@test.com")
+    const [password, setPassword] = useState("123456")
+    const [passwordConfirm, setPasswordconfirm] = useState("123456")
 
     const handleSubmit = (r) => {
         r.preventDefault()
@@ -16,7 +16,7 @@ const SignUp = () => {
         if (password !== passwordConfirm) {
             alert('passwords do not match')
         }
-        signup({ email, password })
+        Signup({ email, password })
     }
 
     return (
