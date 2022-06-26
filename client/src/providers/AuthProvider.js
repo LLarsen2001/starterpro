@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
             setUser(res.data.data);
             navigate("/");
         } catch (err) {
-            alert("register did not work");
+            alert("Sign In did not work");
             console.log(err);
         }
     };

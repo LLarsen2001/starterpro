@@ -1,4 +1,5 @@
 import Card from "../components/shared/Card";
+import Button, { ButtonContainer } from "../styledComponents/Button";
 import {
     useToggle,
     useLocalStorage,
@@ -7,7 +8,7 @@ import {
 } from "../hooks";
 
 const Hooks = () => {
-    const { isToggled, toggle } = useToggle(true);
+    const { isToggled, toggle } = useToggle(false);
     const [age, setAge, removeAge] = useLocalStorage("age", 38);
     const { isMobile, screenHeight, screenWidth } = useMedia();
     const { data, error, loading } = useAxiosOnMount(
@@ -49,7 +50,7 @@ const Hooks = () => {
             <Card header={"useToggle Hook"}>
                 <>
                     {isToggled && <p>show/hide this</p>}
-                    <button onClick={toggle}>toggle</button>
+                    <Button className="ButtonContainer" onClick={toggle}>toggle</Button>
                 </>
             </Card>
 
@@ -57,8 +58,8 @@ const Hooks = () => {
             <Card header={"useLocalStorage Hook"}>
                 <>
                     <p>my age: {age}</p>
-                    <button onClick={() => setAge(parseInt(age) + 1)}>add to age</button>
-                    <button onClick={removeAge}>Remove from localstorage</button>
+                    <Button onClick={() => { setAge(parseInt(age) + 1) }}>add to age</Button>
+                    <Button onClick={removeAge}>Remove from localstorage</Button>
                     <p>age from local storage</p>
                     <p>{window.localStorage.getItem("age")}</p>
                 </>
@@ -79,7 +80,7 @@ const Hooks = () => {
                     {renderAxiosOnMountBody()}
                 </>
             </Card>
-        </div>
+        </div >
     );
 };
 export default Hooks;

@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { useToggle } from "../../hooks";
+import Button from "../../styledComponents/Button";
 const Card = (props) => {
     const { isToggled: show, toggle } = useToggle(true);
     return (
         <CardContainer>
             <CardHeaderContainer>
                 <h3>{props.header}</h3>
-                <button onClick={toggle}>{show ? 'hide' : 'show'}</button>
+                <Button onClick={toggle}>{show ? 'hide' : 'show'}</Button>
             </CardHeaderContainer>
             {show && <CardBody>{props.children}</CardBody>}
         </CardContainer>
