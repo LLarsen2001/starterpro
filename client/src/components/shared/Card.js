@@ -30,5 +30,5 @@ const CardHeaderContainer = styled.div`
 const CardBody = styled.div`
     padding:10px;
 `;
-
+l
 export default Card;
